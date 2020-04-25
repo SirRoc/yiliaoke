@@ -12,6 +12,9 @@ import order from '@/components/order'
 import personal_info from '@/components/personal-info'
 import person_wallet from '@/components/person-wallet'
 
+const Record = () => import(/* webpackChunkName: "group-course" */ '@/pages/course/Record')
+const Flock = () => import(/* webpackChunkName: "group-course" */ '@/pages/course/recordway/Flock')
+const Web = () => import(/* webpackChunkName: "group-course" */ '@/pages/course/recordway/Web')
 const LiveCourse = () => import(/* webpackChunkName: "group-course" */ '@/pages/course/LiveCourse')
 
 Vue.use(Router)
@@ -33,6 +36,9 @@ export default new Router({
     { path: '/order', name:'order', component: order },
     { path: '/personal-info', name:'personal_info', component: personal_info },
     { path: '/person-wallet', name:'person_wallet', component: person_wallet },
+    { path: '/record', name:'record', component: Record },
+    { path: '/record/flock', name:'flock', component: Flock }, // 录制方式：群
+    { path: '/record/web', name:'web', component: Web }, // 录制方式：网页录制
     { path: '/liveCourse', name:'liveCourse', component: LiveCourse },
   ]
 })

@@ -31,7 +31,7 @@
 				</router-link>
 			</div>
 			<div class="cg-category">
-				<router-link to="/broadcast">
+				<router-link to="/record">
 					<div class="cg-category-title">
 						<yd-icon name="order" size=".6rem" color="#FF685D"></yd-icon>&nbsp;&nbsp;<span>课程录制</span> <i class="md-icon icon-font md-icon-arrow-right arrow-right md"></i>
 					</div>
