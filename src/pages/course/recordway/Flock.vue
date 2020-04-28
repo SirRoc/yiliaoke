@@ -8,7 +8,7 @@
         <div class="way">
            <div class="r-between"></div>
             <yd-icon name="play"></yd-icon>
-        </div>
+        
     </div>
 </template>
 <script>
