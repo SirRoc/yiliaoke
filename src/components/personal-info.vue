@@ -27,10 +27,12 @@
 			<yd-cell-item arrow>
 				<span slot="left">收听记录</span>
 				<span slot="right"></span>
-			</yd-cell-item><yd-cell-item arrow>
+			</yd-cell-item>
+			<!-- <yd-cell-item arrow>
 				<span slot="left">使用教程</span>
 				<span slot="right"></span>
-			</yd-cell-item><yd-cell-item arrow>
+			</yd-cell-item> -->
+			<yd-cell-item arrow>
 				<span slot="left">用户须知</span>
 				<span slot="right"></span>
 			</yd-cell-item>

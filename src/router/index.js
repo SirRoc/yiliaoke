@@ -16,6 +16,8 @@ const Record = () => import(/* webpackChunkName: "group-course" */ '@/pages/cour
 const Flock = () => import(/* webpackChunkName: "group-course" */ '@/pages/course/recordway/Flock')
 const Web = () => import(/* webpackChunkName: "group-course" */ '@/pages/course/recordway/Web')
 const LiveCourse = () => import(/* webpackChunkName: "group-course" */ '@/pages/course/LiveCourse')
+const Withdrawal = () => import(/* webpackChunkName: "group-course" */ '@/pages/my/wallet/Withdrawal')
+const TransactionList = () => import(/* webpackChunkName: "group-course" */ '@/pages/my/wallet/TransactionList')
 
 Vue.use(Router)
 
@@ -39,6 +41,8 @@ export default new Router({
     { path: '/record', name:'record', component: Record },
     { path: '/record/flock', name:'flock', component: Flock }, // 录制方式：群
     { path: '/record/web', name:'web', component: Web }, // 录制方式：网页录制
-    { path: '/liveCourse', name:'liveCourse', component: LiveCourse },
+    { path: '/record/web/liveCourse', name:'liveCourse', component: LiveCourse },
+    { path: '/my/wallet/withdrwal', name:'withdrawal', component: Withdrawal },
+    { path: '/my/wallet/transactionList', name:'transactionList', component: TransactionList },
   ]
 })

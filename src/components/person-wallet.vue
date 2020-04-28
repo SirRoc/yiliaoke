@@ -18,12 +18,12 @@
 		<yd-cell-group>
 			<yd-cell-item >
 				<span slot="left">课程收入 <span style="color:#ff685d ; margin-left: 80%;">420元</span> </span>
-				<span slot="right">
+				<span slot="right"  @click.native="withdrawal">
 					<yd-button size="mini" shape="circle" bgcolor="#ff685d" color="#fff">立即体现</yd-button>
 				</span>
 			</yd-cell-item>
-			<yd-cell-item arrow>
-				<span slot="left">交易记录</span>
+			<yd-cell-item arrow @click.native="transactionList">
+				<span slot="left" >交易记录</span>
 			</yd-cell-item>
 			<yd-cell-item arrow>
 				<span slot="left">发票管理</span>
@@ -33,6 +33,24 @@
 </template>
 
 <script>
+export default {
+	data () {
+		return {}
+	},
+	methods: {
+		withdrawal () {
+			this.$router.push({
+				path: '/my/wallet/withdrwal'
+			})
+		},
+		transactionList () {
+			console.log('1111')
+			this.$router.push({
+				path: '/my/wallet/transactionList'
+			})
+		}
+	}
+}
 </script>
 
 <style>

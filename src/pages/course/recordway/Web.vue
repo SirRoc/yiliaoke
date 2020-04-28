@@ -1,31 +1,34 @@
 <template>
     <div>
-         <yd-navbar title="课程方式" :bgcolor="AppBarBgColor" :color="AppBarColor" :height="AppBarHeight">
+         <yd-navbar title="网页录制" :bgcolor="AppBarBgColor" :color="AppBarColor" :height="AppBarHeight">
 			<router-link to="/record" slot="left">
 				<yd-navbar-back-icon color="#FFF">返回</yd-navbar-back-icon>
 			</router-link>
 		</yd-navbar>
-        <div class="step1">
-            <!-- <h3>课程方式</h3> -->
-            <ul class="corser-way">
-                <li class="r-flex" @click="jumpRecord(1)">
-                    <i class="icon-wecaht"></i>
-                    <div class="content">
-                        <p>群内录制</p>
-                        <p class="detail">添加微信录制小助手在微信群内进行录制，操作更便捷</p>
-                    </div>
-                    <i class="icon-right"></i>
-                </li>
-                <li  class="r-flex"  @click="jumpRecord(2)">
-                    <i class="icon-video"></i>
-                    <div class="content">
-                        <p>网页录制</p>
-                        <p class="detail">微信打开网页链接就可以进行录制，使用更便捷</p>
-                    </div>
-                    <i class="icon-right"></i>
-                </li>
-            </ul>
-        </div>
+        <yd-cell-group>
+			<yd-cell-item>
+				<span slot="left">主题名称</span>
+				<input v-model="title" slot="right" type="text" placeholder="不少于6个字，不超过25个字">
+			</yd-cell-item>
+			
+		</yd-cell-group>
+		<yd-cell-group title="主题简介">
+			<yd-cell-item>
+				<yd-textarea  v-model="content" slot="right" placeholder="请简要概述您的直播内容（不超过200个字）" maxlength="120"></yd-textarea>
+			</yd-cell-item>
+		</yd-cell-group>
+		<yd-cell-group>
+            <yd-cell-item>
+				<span slot="left">收费类型</span>
+				<span slot="right">
+					<yd-radio-group v-model="type" color="#ff685d">
+						<yd-radio val="1">免费</yd-radio>
+						<yd-radio val="2">收费</yd-radio>
+					</yd-radio-group>
+				</span>
+			</yd-cell-item>
+		</yd-cell-group>
+        <yd-button style="width: 80%;height: 40px;margin: .3rem auto;" size="large" shape="circle" bgcolor="#ff685d" color="#FFF" @click.native="webRecord">提交</yd-button>
     </div>
 </template>
 <script>
@@ -34,22 +37,16 @@ export default {
     data () {
         return {
             AppBarHeight,AppBarBgColor,AppBarColor,
+            type:1,
+            title: '',
+            content: ''
         }
     },
     methods: {
-        // 跳转录制方式
-        jumpRecord (type) {
-            let url = '';
-            switch(type) {
-                case 1: // 群
-                    url = '/record/flock'
-                break;
-                case 2: // 网页
-                    url = '/record/web'
-                break;
-            }
+        // 网页录制
+        webRecord () {
             this.$router.push({
-                url: url
+                path: '/record/web/liveCourse'
             })
         }
     }
